@@ -18,14 +18,6 @@ MongoClient.connect('mongodb://localhost:27017', function(err, client){
   console.log('connect to database');
 
   server.post('/api/teams', function(req, res){
-    // req.body
-    /*
-    {
-    name:'yoda',
-    quote:'do'
-  }
-  */
-
     db.collection('teams').insert( req.body, function(err, result){
       if(err){
         console.log(err);
